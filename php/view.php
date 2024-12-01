@@ -73,7 +73,7 @@ $result = $conn->query($sql);
                             <td>' . htmlspecialchars($row["ipk"]) . '</td>
                             <td>' . htmlspecialchars($row["status"]) . '</td>
                             <td>' . $beasiswa . '</td> <!-- Beasiswa Type Column -->
-                            <td><a href="/public/' . htmlspecialchars($row["berkas"]) . '" target="_blank" class="btn btn-sm btn-info">View File</a></td>
+                            <td><a href="/bnsp/public/' . htmlspecialchars($row["berkas"]) . '" target="_blank" class="btn btn-sm btn-info">View File</a></td>
                             <td>
                                 <button id="approve-button-' . $row['id'] . '" class="btn ' . $buttonClass . '" onclick="' . $action . '(' . $row['id'] . ')">
                                     ' . $buttonText . '
