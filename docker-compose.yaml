@@ -1,0 +1,23 @@
+services:
+  database:
+    container_name: bnsp_database
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: bnsp
+      MYSQL_USER: bnsp
+      MYSQL_PASSWORD: bnsp
+      MYSQL_DATABASE: bnsp
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./database/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: --port=3306
+
+volumes:
+  dbdata:
